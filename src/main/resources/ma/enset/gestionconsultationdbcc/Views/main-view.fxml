@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="574.0" prefWidth="1040.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+  <tabs>
+    <Tab styleClass=" panel-info,h4" text="Patient">
+      <fx:include source="Patients2-view.fxml" />
+    </Tab>
+    <Tab styleClass="panel-info,h4" text="Consultation">
+      <fx:include source="consultations2-view.fxml" />
+    </Tab>
+  </tabs>
+</TabPane>

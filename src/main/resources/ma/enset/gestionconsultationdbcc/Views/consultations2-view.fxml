@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.gestionconsultationdbcc.controllers.ConsultationController">
+   <top>
+      <GridPane prefHeight="112.0" prefWidth="1040.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="64.0" prefWidth="1038.0" text="FICHE CONSULTATION" textAlignment="CENTER" textFill="#9c7ba8">
+               <font>
+                  <Font name="System Italic" size="44.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+   </top>
+   <left>
+      <VBox prefHeight="462.0" prefWidth="344.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="281.0" prefWidth="344.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="52.0" minHeight="10.0" prefHeight="25.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="31.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="32.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="188.0" minHeight="10.0" prefHeight="138.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="Date De Consultation :">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Patient :" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="Descriptions :" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <DatePicker fx:id="dateConsultation" prefHeight="25.0" prefWidth="229.0" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></DatePicker>
+                  <ComboBox fx:id="comboPatient" prefHeight="32.0" prefWidth="232.0" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" />
+                     </GridPane.margin></ComboBox>
+                  <TextArea fx:id="texteFieldDescription" prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin></TextArea>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="30.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addConsultation" styleClass="btn-primary" text="AJOUTER" />
+                  <Button mnemonicParsing="false" onAction="#deleteConsultation" styleClass="btn-danger" text="SEPPRIME" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <TableView fx:id="tableConsultation" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columnID" prefWidth="75.0" text="ID" />
+          <TableColumn fx:id="columnDateConsultation" prefWidth="161.0" text="DATE DE CONSULTATION" />
+            <TableColumn fx:id="columnDescription" prefWidth="303.0" text="Description" />
+            <TableColumn fx:id="columnPatient" minWidth="0.0" prefWidth="156.0" text="Patient" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.enset.gestionconsultationdbcc.controllers.PatientController">
+   <left>
+      <VBox prefHeight="461.0" prefWidth="302.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane prefHeight="292.0" prefWidth="301.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="34.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="67.0" minHeight="10.0" prefHeight="50.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="63.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="33.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="59.0" minHeight="10.0" prefHeight="48.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="41.0" minHeight="8.0" prefHeight="27.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="71.0" minHeight="10.0" prefHeight="46.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Label text="NOM :">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="PRENONM :" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="TELPHONE :" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <Label text="EMAIL :" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Label>
+                  <TextField fx:id="textfieldNom" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="textfieldPrenom" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="textfieldTel" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin></TextField>
+                  <TextField fx:id="textfieldEmail" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="5.0" right="5.0" />
+                     </GridPane.margin></TextField>
+               </children>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="73.0" prefWidth="302.0" spacing="20.0">
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+               <children>
+                  <Button mnemonicParsing="false" onAction="#addPatient" styleClass="btn-primary" text="AJOUTER" />
+                  <Button mnemonicParsing="false" onAction="#updatePatient" styleClass="btn-success" text="MODIFIER" />
+                  <Button mnemonicParsing="false" onAction="#deletePatient" styleClass="btn-danger" text="SEPPRIME" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </left>
+   <top>
+      <GridPane prefHeight="152.0" prefWidth="1040.0" BorderPane.alignment="CENTER">
+        <columnConstraints>
+          <ColumnConstraints fillWidth="false" halignment="RIGHT" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="101.0" minHeight="10.0" prefHeight="101.0" valignment="TOP" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="52.0" minHeight="0.0" prefHeight="32.0" valignment="CENTER" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label alignment="CENTER" contentDisplay="TOP" prefHeight="59.0" prefWidth="1040.0" text="FICHE PATIENT" textAlignment="CENTER" textFill="#8697cd">
+               <font>
+                  <Font name="System Italic" size="44.0" />
+               </font>
+            </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="79.0" prefWidth="1040.0" spacing="20.0" GridPane.rowIndex="1">
+               <children>
+                  <Label text="Recherche (NOM / PRENOM) :">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="textfieldSearch" alignment="CENTER"  prefHeight="37.0" prefWidth="448.0">
+                     <HBox.margin>
+                        <Insets right="20.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+         </children>
+      </GridPane>
+   </top>
+   <center>
+      <TableView fx:id="tablePatients" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <columns>
+          <TableColumn fx:id="columnID" prefWidth="75.0" text="ID"  />
+          <TableColumn fx:id="columnNOM" prefWidth="194.0" text="NOM" />
+            <TableColumn fx:id="columnPRENOM" minWidth="3.0" prefWidth="148.0" text="PRENOM" />
+            <TableColumn fx:id="columnTEL" prefWidth="129.0" text="Telephone" />
+            <TableColumn fx:id="columnEMAIL" prefWidth="191.0" text="Emails" />
+        </columns>
+      </TableView>
+   </center>
+</BorderPane>
